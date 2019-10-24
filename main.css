@@ -1,0 +1,154 @@
+body {
+  background: rgb(197,222,234);
+  background: linear-gradient(to bottom,  rgb(197,222,234) 0%,rgb(138,187,215) 31%,rgb(6,109,171) 100%);  
+}
+
+.MainContiner {
+  margin: 0 20%;
+}
+
+.TermsContainer {
+  background-color: white;
+  height: 270px;  
+  overflow: hidden;
+  border: solid medium gray;
+}
+
+.TermsHeader {
+  background-color: yellowgreen;
+  height: 30px;
+}
+
+.TermsSmallScrollBox {
+  position: relative;
+  height: 240px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.DownIndicator {
+  position: sticky;
+  bottom: 0;  
+  background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(246,246,246,0.47) 47%,rgba(191,191,191,1) 100%);
+  width: 100%;
+  height: 120px;
+  text-align: center;
+}
+
+.BoundArrow {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  width: 16px;
+  height: 16px;;
+  border: outset 3px skyblue;
+  border-top-style: hidden;
+  border-right-style: hidden;  
+  animation: BoundAnimation .3s ease infinite alternate;
+}
+
+@keyframes BoundAnimation {
+  0% {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  
+  100% {
+    transform: translateY(-20px) rotate(-45deg);
+  }
+}
+#TermsDialog {  
+  width: 90%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 0 1em black;  
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+ 
+#TermsDialog::backdrop {  
+  background-color: rgba(0, 0, 0, 0.4);  
+}
+
+.ScrollerFrame {
+  position: fixed;
+  right: 80px;
+  top: 50%;
+  width: 48px;
+  height: 120px;
+  opacity: 0.7;
+  transform: translateY(-50%);    
+}
+
+.ScrollerLane {
+  width: 32px;
+  height: 100%;
+  background: rgb(76,76,76);
+  background: linear-gradient(to right,  rgba(76,76,76,1) 0%,rgba(14,14,14,1) 50%,rgba(76,76,76,1) 100%);
+  border-radius: 16px;
+  margin: 0 50%;
+}
+
+.ScrollerKnob {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 60px;
+  transform: translate(-8px, -50%);
+  background-color: snow;
+  border: silver thin solid;
+  border-radius: 24px;
+  box-shadow: 1px 1px 3px;
+  display:table-cell;
+  text-align: center;
+  vertical-align: center;
+}
+
+.UpTriangle {
+  display: inline-block;        
+  width: 0px;
+  height:0px;
+  border-top: 10px solid transparent;      
+  border-bottom: 10px solid darkgreen;      
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.DownTriangle {
+  display: inline-block;        
+  width: 0px;
+  height:0px;
+  border-bottom: 10px solid transparent;      
+  border-top: 10px solid darkgreen;      
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.ThrowAnim {
+  animation: ThrowingAnimation .4s ease-out infinite alternate;
+}
+
+@keyframes ThrowingAnimation {
+  0% {
+    transform: translateY(0px) scale(1, 1);
+    border-bottom-color: darkgreen;
+  }
+  100% {
+    transform: translateY(-10px) scale(1.6, 0.8);
+    border-bottom-color: lightgreen;
+  }
+}
+
+.BoundAnim {
+  animation: BoundingAnimation .4s ease-out infinite alternate;
+}
+
+@keyframes BoundingAnimation {
+  0% {
+    transform: translateY(0px) scale(1, 1);
+    border-top-color: darkgreen;
+  }
+  100% {
+    transform: translateY(10px) scale(1.6, 0.8);
+    border-top-color: lightgreen;
+  }
+}
